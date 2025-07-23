@@ -7,7 +7,7 @@ abstract class Shape {
 
     abstract double area();
 
-    abstract double perimeter();
+    abstract void draw();
 }
 
 class Circle extends Shape {
@@ -19,13 +19,13 @@ class Circle extends Shape {
     }
 
     @Override
-    double area() {
-        return 3.14 * radius * radius;
+    void draw() {
+        System.out.println("Circle has been drawn");
     }
 
     @Override
-    double perimeter() {
-        return 2.0 * 3.14 * radius;
+    double area() {
+        return 3.14 * radius * radius;
     }
 }
 
@@ -39,24 +39,24 @@ class Rectangle extends Shape {
     }
 
     @Override
-    double area() {
-        return length * breadth;
+    void draw() {
+        System.out.println("Rectangle has been drawn");
     }
 
     @Override
-    double perimeter() {
-        return 2 * (length + breadth);
+    double area() {
+        return length * breadth;
     }
 }
 
 class Main {
     public static void main(String[] args) {
         Shape c1 = new Circle(10, "Circle Object");
+        c1.draw();
         System.out.println(c1.area());
-        System.out.println(c1.perimeter());
 
         Shape r1 = new Rectangle(10, 10, "Rectangle Object");
+        r1.draw();
         System.out.println(r1.area());
-        System.out.println(r1.perimeter());
     }
 }
